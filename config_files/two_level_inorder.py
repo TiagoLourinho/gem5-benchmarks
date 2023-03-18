@@ -46,8 +46,7 @@ from m5.objects import *
 from gem5.runtime import get_runtime_isa
 
 # Add the common scripts to our path
-m5.util.addToPath("../gem5/")
-m5.util.addToPath("../gem5/configs/")
+m5.util.addToPath(os.path.join(os.getcwd(), "../gem5/configs/"))
 
 # import the caches which we made
 from caches import *

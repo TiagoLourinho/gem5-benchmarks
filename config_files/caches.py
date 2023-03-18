@@ -34,9 +34,10 @@ line options from each individual class.
 
 import m5
 from m5.objects import Cache
+import os
 
 # Add the common scripts to our path
-m5.util.addToPath("../../")
+m5.util.addToPath(os.path.join(os.getcwd(), "../gem5/configs/"))
 
 from common import SimpleOpts
 
@@ -95,9 +96,7 @@ class L1DCache(L1Cache):
     # Set the default size
     size = "64kB"
 
-    SimpleOpts.add_option(
-        "--l1d_size", help="L1 data cache size. Default: %s" % size
-    )
+    SimpleOpts.add_option("--l1d_size", help="L1 data cache size. Default: %s" % size)
 
     def __init__(self, opts=None):
         super(L1DCache, self).__init__(opts)
@@ -122,9 +121,7 @@ class L2Cache(Cache):
     mshrs = 20
     tgts_per_mshr = 12
 
-    SimpleOpts.add_option(
-        "--l2_size", help="L2 cache size. Default: %s" % size
-    )
+    SimpleOpts.add_option("--l2_size", help="L2 cache size. Default: %s" % size)
 
     def __init__(self, opts=None):
         super(L2Cache, self).__init__()

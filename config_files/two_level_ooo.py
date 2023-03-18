@@ -46,7 +46,8 @@ from m5.objects import *
 from gem5.runtime import get_runtime_isa
 
 # Add the common scripts to our path
-m5.util.addToPath("../../")
+m5.util.addToPath("../gem5/")
+m5.util.addToPath("../gem5/configs/")
 
 # import the caches which we made
 from caches import *
@@ -111,9 +112,9 @@ system.l2cache.connectMemSideBus(system.membus)
 
 # create the interrupt controller for the CPU
 system.cpu.createInterruptController()
-system.cpu.interrupts[0].pio = system.membus.mem_side_ports
+""" system.cpu.interrupts[0].pio = system.membus.mem_side_ports
 system.cpu.interrupts[0].int_requestor = system.membus.cpu_side_ports
-system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports
+system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports """
 
 # Connect the system up to the membus
 system.system_port = system.membus.cpu_side_ports

@@ -1,4 +1,5 @@
 .vscode/
+m5out/
 
 # Prerequisites
 *.d

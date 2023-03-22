@@ -6,7 +6,7 @@ int main()
 
     // Repeat the same "basic block" of code sometimes
     // to reduce the instructions wrongly fetched in the branch (8 contiguous instructions)
-    for (int j = 0; j < 10000000; j++)
+    for (int j = 0; j < 100000; j++)
     {
         // 1 - 4
 		i1 = 1;

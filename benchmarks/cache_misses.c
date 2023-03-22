@@ -1,20 +1,17 @@
+#define INT_SIZE 4           // B
+#define L1_SIZE 64 * 1024    // B
+#define SIZE_ARRAY 70 * 1024 // B
+#define CACHE_LINE 64        // B
+#define ITER 100000000       // N
+
 int main()
 {
-    int array[100000], count = 0;
-    for (int j = 0; j < 2048; j++)
-    {
-        for (int i = j; i < 100000; i += 2048)
-        {
-            array[i] = i;
-        }
-    }
+    int A[SIZE_ARRAY / INT_SIZE];
+    register int x = 0;
 
-    for (int j = 0; j < 2048; j++)
+    for (register int j = 0; j < ITER; j += CACHE_LINE / INT_SIZE)
     {
-        for (int i = j; i < 100000; i += 2048)
-        {
-            count += array[i];
-        }
+        x = A[j % (SIZE_ARRAY / INT_SIZE)];
     }
 
     return 0;

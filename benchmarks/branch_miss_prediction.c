@@ -1,136 +1,298 @@
+unsigned short lfsr = 0xACE1u;
+unsigned bit;
+
 int main()
 {
 
-    int count = 0, k, rand = 14, bit, i_copy;
+    int count = 0;
 
     for (int i = 0; i < 100000; i++)
     {
 
-        i_copy = i;
-
         ////////// Basic Block //////////
-        rand ^= rand << 13;
-        rand ^= rand >> 17; // Generate random number
-        rand ^= rand << 5;
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
 
-        k = i_copy % 32;       // Select the bit to choose (int have 32 bits)
-        bit = (rand >> k) & 1; // Extract the bit in position k
-
-        i_copy++; // Change for the following basic block
-
-        if (bit)
+        if (lfsr % 2 != 0)
         {
             count++;
         }
         /////////////////////////////////
-
         ////////// Basic Block //////////
-        rand ^= rand << 13;
-        rand ^= rand >> 17; // Generate random number
-        rand ^= rand << 5;
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
 
-        k = i_copy % 32;       // Select the bit to choose (int have 32 bits)
-        bit = (rand >> k) & 1; // Extract the bit in position k
-
-        i_copy++; // Change for the following basic block
-
-        if (bit)
+        if (lfsr % 2 != 0)
         {
             count++;
         }
         /////////////////////////////////
-
         ////////// Basic Block //////////
-        rand ^= rand << 13;
-        rand ^= rand >> 17; // Generate random number
-        rand ^= rand << 5;
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
 
-        k = i_copy % 32;       // Select the bit to choose (int have 32 bits)
-        bit = (rand >> k) & 1; // Extract the bit in position k
-
-        i_copy++; // Change for the following basic block
-
-        if (bit)
+        if (lfsr % 2 != 0)
         {
             count++;
         }
         /////////////////////////////////
-
         ////////// Basic Block //////////
-        rand ^= rand << 13;
-        rand ^= rand >> 17; // Generate random number
-        rand ^= rand << 5;
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
 
-        k = i_copy % 32;       // Select the bit to choose (int have 32 bits)
-        bit = (rand >> k) & 1; // Extract the bit in position k
-
-        i_copy++; // Change for the following basic block
-
-        if (bit)
+        if (lfsr % 2 != 0)
         {
             count++;
         }
         /////////////////////////////////
-
         ////////// Basic Block //////////
-        rand ^= rand << 13;
-        rand ^= rand >> 17; // Generate random number
-        rand ^= rand << 5;
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
 
-        k = i_copy % 32;       // Select the bit to choose (int have 32 bits)
-        bit = (rand >> k) & 1; // Extract the bit in position k
-
-        i_copy++; // Change for the following basic block
-
-        if (bit)
+        if (lfsr % 2 != 0)
         {
             count++;
         }
         /////////////////////////////////
-
         ////////// Basic Block //////////
-        rand ^= rand << 13;
-        rand ^= rand >> 17; // Generate random number
-        rand ^= rand << 5;
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
 
-        k = i_copy % 32;       // Select the bit to choose (int have 32 bits)
-        bit = (rand >> k) & 1; // Extract the bit in position k
-
-        i_copy++; // Change for the following basic block
-
-        if (bit)
+        if (lfsr % 2 != 0)
         {
             count++;
         }
         /////////////////////////////////
-
         ////////// Basic Block //////////
-        rand ^= rand << 13;
-        rand ^= rand >> 17; // Generate random number
-        rand ^= rand << 5;
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
 
-        k = i_copy % 32;       // Select the bit to choose (int have 32 bits)
-        bit = (rand >> k) & 1; // Extract the bit in position k
-
-        i_copy++; // Change for the following basic block
-
-        if (bit)
+        if (lfsr % 2 != 0)
         {
             count++;
         }
         /////////////////////////////////
-
         ////////// Basic Block //////////
-        rand ^= rand << 13;
-        rand ^= rand >> 17; // Generate random number
-        rand ^= rand << 5;
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
 
-        k = i_copy % 32;       // Select the bit to choose (int have 32 bits)
-        bit = (rand >> k) & 1; // Extract the bit in position k
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
 
-        i_copy++; // Change for the following basic block
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
 
-        if (bit)
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
+        {
+            count++;
+        }
+        /////////////////////////////////
+        ////////// Basic Block //////////
+        bit = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1;
+        lfsr = (lfsr >> 1) | (bit << 15);
+
+        if (lfsr % 2 != 0)
         {
             count++;
         }

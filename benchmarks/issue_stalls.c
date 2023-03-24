@@ -1,5 +1,4 @@
 #include <math.h>
-/* Compile with -lm */
 
 int main() {
     int x = 1, y = 20, z = 10, k = 3;

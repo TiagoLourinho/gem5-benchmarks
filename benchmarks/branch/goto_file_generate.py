@@ -1,12 +1,12 @@
 import os
 
-
+# Hyperparameters
 N_BLOCKS = 10
 N_LABELS = 10
 ITER = 100000
 
 
-# Create the branch_misprediction_goto.c file
+# Create the branch_misprediction_goto.c file according to defined hyperparameters
 
 with open(os.path.join("benchmarks/branch/branch_misprediction_goto.c"), "w") as f:
     string = "int main() { unsigned int rand = 11; int x; void "

@@ -1,8 +1,8 @@
 import os
 
 
-N_BLOCKS = 5
-N_LABELS = 5
+N_BLOCKS = 10
+N_LABELS = 10
 ITER = 100000
 
 

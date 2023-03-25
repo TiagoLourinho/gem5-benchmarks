@@ -1,13 +1,16 @@
+#define INT_SIZE 4            // bytes
+#define L2_SIZE 256 * 1024    // bytes
+#define ARRAY_SIZE 256 * 1024 // bytes
+#define CACHE_LINE 64         // bytes
+#define ITER 1000000          // N
+
 int main()
 {
+    int A[ARRAY_SIZE / INT_SIZE], B[ARRAY_SIZE / INT_SIZE];
 
-    int A[1000000];
-    int B[1000000];
-    register int j = 0;
-
-    for (j = 0; j < 1000000 >> 4; j++)
+        for (register int j = 0; j < ITER; j += CACHE_LINE / INT_SIZE)
     {
-        B[j << 4] = A[j << 4];
+        B[j % (ARRAY_SIZE / INT_SIZE)] = A[j % (ARRAY_SIZE / INT_SIZE)];
     }
 
     return 0;

@@ -1,6 +1,6 @@
 #define INT_SIZE 4           // bytes
 #define L1_SIZE 64 * 1024    // bytes
-#define ARRAY_SIZE 70 * 1024 // bytes
+#define ARRAY_SIZE 64 * 1024 // bytes
 #define CACHE_LINE 64        // bytes
 #define ITER 1000000         // N
 

@@ -65,6 +65,7 @@ int main()
     unsigned int rand = 11;
     void (*ptr[10])();
 
+    // Store the functions pointers into the arrays
     ptr[0] = func1;
     ptr[1] = func2;
     ptr[2] = func3;
@@ -76,6 +77,8 @@ int main()
     ptr[8] = func9;
     ptr[9] = func10;
 
+    // Create an array of function pointers and jump to a random one
+    // Repeat the same "basic block" some times to reduce the influence of the loop
     for (int i = 0; i < 100000; i++)
     {
         rand ^= rand << 13;

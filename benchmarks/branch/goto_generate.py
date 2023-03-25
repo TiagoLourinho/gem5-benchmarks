@@ -1,10 +1,12 @@
 import os
 
 
-N_BLOCKS = 2
-N_LABELS = 10
+N_BLOCKS = 5
+N_LABELS = 5
 ITER = 100000
 
+
+# Create the branch_misprediction_goto.c file
 
 with open(os.path.join("benchmarks/branch/branch_misprediction_goto.c"), "w") as f:
     string = "int main() { unsigned int rand = 11; int x; void "
